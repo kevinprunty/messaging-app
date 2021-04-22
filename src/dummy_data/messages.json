@@ -1,0 +1,17 @@
+[
+    {
+        "id": "001",
+        "title": "First Message",
+        "body": "This is the first message"
+    },
+    {
+        "id": "002",
+        "title": "Second Message",
+        "body": "This is the second message"
+    },
+    {
+        "id": "003",
+        "title": "Third Message",
+        "body": "This is the third message"
+    }
+]

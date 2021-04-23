@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
+const options = require('../options.js');
+
 const apiRoute = require('./routes/api.js');
 
 const app = express();
@@ -15,8 +17,7 @@ app.use(express.json());
 app.use(cors());
 
 // Connect to MongoDB
-const PASS = '37rkk2s8S8xgPEHW';
-const URI = `mongodb+srv://admin-user:${PASS}@cluster0.nee8h.mongodb.net/MessageDatabase?retryWrites=true&w=majority`;
+const URI = `mongodb+srv://admin-user:${options.mongoDBPassword}@cluster0.nee8h.mongodb.net/MessageDatabase?retryWrites=true&w=majority`;
 mongoose.connect(URI, {useNewUrlParser: true, useUnifiedTopology: true})
     .then((response) => {
         console.log("Connected to MongoDB");

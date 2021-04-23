@@ -7,16 +7,28 @@ function MessageForm() {
 
     const handleTitleChange = ( event ) => {
         setTitle(event.target.value);
-        console.log(event.target.value);
     }
 
     const handleBodyChange = ( event ) => {
         setBody(event.target.value);
-        console.log(event.target.value);
     }
 
     const handleSubmit = ( event ) => {
-        console.log("Form submitted");
+        const url = 'http://localhost:3001/api/messages';
+
+        const newMessage = { title, body };
+        
+        fetch(url, {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json'
+            }, 
+            body: JSON.stringify(newMessage)
+        }).then( response => {
+            console.log(response.json);
+        })
+
         event.preventDefault();
     }
 
@@ -30,6 +42,9 @@ function MessageForm() {
             <div className="post-body">
                 <label htmlFor="body">Message:</label>
                 <textarea value={body} in="body" onChange={handleBodyChange}/>
+            </div>
+            <div className="submit-button">
+                <button className="btn primary">Submit</button>
             </div>
         </form>
     )

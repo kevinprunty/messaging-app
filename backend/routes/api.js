@@ -19,7 +19,7 @@ router.get('/messages', (req, res) => {
 // Send messages
 router.post('/messages', (req, res) => {
     const title = req.body.title;
-    const message = req.body.message;
+    const message = req.body.body;
 
     const newMessage = new Message({ title, message });
 

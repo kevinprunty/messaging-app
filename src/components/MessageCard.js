@@ -6,7 +6,7 @@ function MessageCard({ message }) {
                 <h3>{ message.title }</h3>
             </div>
             <div className="card-body">
-                <p>{ message.body }</p>
+                <p>{ message.message }</p>
             </div>
         </div>
     )
